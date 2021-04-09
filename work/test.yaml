@@ -1,0 +1,34 @@
+---
+    #加法用例集
+    add_test:
+        #用例模板:
+        #用例名 : [相加值 , 预期结果 , 预期结果]
+        add_int : [1, 1, 2]
+        add_float : [0.1, 0.1, 0.2]
+        add_bignum : [1000, 1000, 2000]
+        add_zeronum : [0, 1000, 1000]
+        add_minus : [-1 , -1 , -2]
+        add_minus_int : [-2 , 4 , 2]
+        add_minus_int_minus : [-10 , 1 , -9]
+        add_minus_int_zero : [-1 , 1 , 0]
+        add_int_float : [1 , 0.1 , 1.1]
+        add_minus_int_float : [-1 , 0.1 , -0.9]
+        add_minus_float : [-0.1 , -0.1 , -0.2]
+        add_minus_float_1 : [-0.1 , 0.1 , 0]
+    #减法用例集
+    sub_test :
+        #用例模板:
+        #用例名 : [相加值 , 预期结果 , 预期结果]
+        sub_int : [1, 1, 0]
+        sub_float : [0.1, 0.1, 0]
+        sub_s_sub-b : [1000, 2000, -1000]
+        sub_bignum : [2000, 1000, 1000]
+        sub_fushu : [-1, -1, 0]
+        sub_int_float : [1 , 0.1 , 0.9]
+        sub_int_minus_float : [1 , -0.1 , 1.1]
+        sub_int_zero : [1, 0, 1]
+        sub_float_zero : [0.1, 0 , 0.1]
+        sub_minus_float : [-0.2 , -0.1 , -0.1]
+        sub_minus_float_1 : [-0.1 , -0.2 , 0.1]
+        sub_minus_float_minus_int : [-0.1 , -1 , 0.9]
+        sub_minus_float_int : [-0.1 , 1 , -1.1]
