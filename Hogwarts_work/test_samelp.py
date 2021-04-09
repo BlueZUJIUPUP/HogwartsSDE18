@@ -4,7 +4,7 @@
 # @Author : BLUE_JUZIUPUP
 import pytest
 
-from Open_Test import add_list,sub_list,add_value,sub_value
+from .Open_Test import add_list,sub_list,add_value,sub_value
 
 
 class Testone:
