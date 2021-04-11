@@ -12,6 +12,7 @@ class Testone:
         print("开始运行")
     def teardown_class(self):
         print("结束运行")
+
     def setup(self):
         print("开始计算了")
 
