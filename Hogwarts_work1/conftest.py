@@ -15,9 +15,4 @@ def pytest_collection_modifyitems(items):
         item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
         print('用例名：', item.name)
         print('用例节点：', item.nodeid)
-    print(items)
 
-
-
-if __name__ == '__main__':
-    pytest.main(["-vs"])
