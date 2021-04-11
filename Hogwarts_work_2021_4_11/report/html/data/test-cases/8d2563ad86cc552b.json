@@ -1,0 +1,174 @@
+{
+  "uid" : "8d2563ad86cc552b",
+  "name" : "test_sub[sub_int_zero]",
+  "fullName" : "test_case.test_main#test_sub",
+  "historyId" : "a839b33c745c09d41f7b43434f46b8f0",
+  "time" : {
+    "start" : 1618153743479,
+    "stop" : 1618153743479,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "module_setup",
+    "time" : {
+      "start" : 1618153743436,
+      "stop" : 1618153743437,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "function_setup",
+    "time" : {
+      "start" : 1618153743478,
+      "stop" : 1618153743478,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "sub_list",
+    "time" : {
+      "start" : 1618153743478,
+      "stop" : 1618153743478,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "module_setup::0",
+    "time" : {
+      "start" : 1618153743515,
+      "stop" : 1618153743515,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "function_setup::0",
+    "time" : {
+      "start" : 1618153743480,
+      "stop" : 1618153743480,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "run(order=2)"
+  }, {
+    "name" : "parentSuite",
+    "value" : "test_case"
+  }, {
+    "name" : "suite",
+    "value" : "test_main"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-ITR5G1E"
+  }, {
+    "name" : "thread",
+    "value" : "2960-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_case.test_main"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "sub_list",
+    "value" : "[1, 0, 1]"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "f67c2f5fee700c61",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618153418015,
+        "stop" : 1618153418015,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "e3dd9384f242e6f0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618153272235,
+        "stop" : 1618153272235,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "81ad550c3c1ba82c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618153211475,
+        "stop" : 1618153211475,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "3d9a961578ed882",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618153074832,
+        "stop" : 1618153074832,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "cb6cf46579150030",
+      "status" : "passed",
+      "time" : {
+        "start" : 1618153047202,
+        "stop" : 1618153047202,
+        "duration" : 0
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ "run(order=2)" ]
+  },
+  "source" : "8d2563ad86cc552b.json",
+  "parameterValues" : [ "[1, 0, 1]" ]
+}
