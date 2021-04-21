@@ -1,14 +1,30 @@
-import time
+# -*- coding: utf-8 -*-
+# @File   : Open_Test
+# @Time   : 2021/4/21 22:08
+# @Author : BLUE_JUZIUPUP
 
+import time
 import yaml
 from selenium import webdriver
 
 
-def test_save_cookei():
-    driver = webdriver.Chrome()
-    driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?")
-    time.sleep(20)
-    cookie = driver.get_cookies()
-    # °Ñcookie´æÈçyamlÎÄ¼şÄÚ
-    with open("data.yaml", "w", encoding="UTF-8") as f:
-        yaml.dump(cookie, f)
+class Test_cookie:
+
+    def setup(self):
+        print("å¼€å§‹è¿è¡Œ")
+
+    def teardown(self):
+        self.driver.quit()
+        print("ç»“æŸè¿è¡Œ")
+
+
+    def test_save_cookei(self):
+        self.driver = webdriver.Chrome()
+        self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?")
+        time.sleep(20)
+        cookie = self.driver.get_cookies()
+        # æŠŠcookieå­˜å¦‚yamlæ–‡ä»¶å†…
+        with open("data.yaml", "w", encoding="UTF-8") as f:
+            yaml.dump(cookie, f)
+
+
