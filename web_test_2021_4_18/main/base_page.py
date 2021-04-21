@@ -11,7 +11,7 @@ class BasePage:
         if base_driver == None:
             self.driver = webdriver.Chrome()
             self.driver.get("https://work.weixin.qq.com/wework_admin/loginpage_wx?")
-            with open("../cookie/data.yaml",encoding="utf-8") as f:
+            with open(r"C:\Users\BLUE_JUZIUPUP\Desktop\hgwc\HogwartsSDE18\web_test_2021_4_18\cookie\data.yaml",encoding="utf-8") as f:
                 yaml_data = yaml.safe_load(f)
                 print(yaml_data)
                 for cookie in yaml_data:

@@ -6,7 +6,7 @@
 import pytest
 import allure
 
-from Hogwarts_work_2021_4_11.test_data.test_data_list import add_list,sub_list,add_value,sub_value
+#from Hogwarts_work_2021_4_11.test_data.test_data_list import add_list,sub_list,add_value,sub_value
 
 @pytest.fixture(scope="module")
 def module_setup():

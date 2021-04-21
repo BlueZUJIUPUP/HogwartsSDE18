@@ -6,7 +6,7 @@ import time
 
 from selenium.webdriver.common.by import By
 
-from HogwartsSDE18.web_test_2021_4_18.main.base_page import BasePage
+from web_test_2021_4_18.main.base_page import BasePage
 
 
 class mian_list(BasePage):

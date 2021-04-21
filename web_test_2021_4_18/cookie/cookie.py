@@ -8,7 +8,7 @@ import yaml
 from selenium import webdriver
 
 
-class Test_cookie:
+class cookie:
 
     def setup(self):
         print("开始运行")

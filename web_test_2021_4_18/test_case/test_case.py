@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*
 import pytest
 
-from HogwartsSDE18.web_test_2021_4_18.main.contact import contact
+from web_test_2021_4_18.main.contact import contact
 
 
 class Test_case:
@@ -10,7 +10,6 @@ class Test_case:
 
 
     @pytest.mark.parametrize("dept_name",[['ceshi005'],['ceshi006']],ids=['ceshi005','ceshi006'])
-
     def test_add_member(self,dept_name):
 
         """

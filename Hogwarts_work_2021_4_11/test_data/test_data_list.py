@@ -8,7 +8,7 @@ import yaml
 
 #读取yaml文件的用例集
 def open_test():
-    with open(r'test_data/test_case.yaml', mode='r',encoding="utf-8") as f:
+    with open(r'C:\Users\BLUE_JUZIUPUP\Desktop\hgwc\HogwartsSDE18\Hogwarts_work_2021_4_11\test_data\test_case.yaml',encoding="utf-8") as f:
         a = yaml.load(f,Loader=yaml.FullLoader)
         add = a['add_test']
         sub = a['sub_test']
