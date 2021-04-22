@@ -38,3 +38,13 @@ class Test_suger():
         x = size['width']
         y = size['height'] #100/5  #100/1.5
         TouchAction(driver=self.driver).press(x=x/2,y=y/1.5).wait(300).move_to(x=x/2,y=y/5).release().perform()
+        '''
+        使用uiautomator滚动
+        当识别到某一元素后停止滚动
+        self.driver.find_elements_by_android_uiautomator('new UiScrollable(new UiSelector().'
+                                                         'scrollable(true).instance(0)).'
+                                                         'scrollIntoview(new Uiselector( ).text(“雪盈证券"").'
+                                                         'instance(0));' ).click()
+        '''
+
+
