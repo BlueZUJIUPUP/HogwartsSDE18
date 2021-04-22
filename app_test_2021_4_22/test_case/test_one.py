@@ -19,7 +19,7 @@ class Test_suger():
         desired_caps['unicodeKeyboard'] = 'true'
         desired_caps['resetKeyboard'] =  'true'
         desired_caps['autoAcceptAlerts'] = 'true'
-        #desired_caps: ['autoAcceptAlerts'] = 'true'
+        #desired_caps['dontStopAppOnReset'] = 'true'
         desired_caps['noReset'] = 'true'
         self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         self.driver.implicitly_wait(10)
