@@ -4,6 +4,9 @@
 # @Author : BLUE_JUZIUPUP
 import pytest
 
+from app_test_2021_4_22.mian.App import App
+from app_test_2021_4_22.mian.BasePage import BasePage
+
 
 def pytest_collection_modifyitems(items):
     """
@@ -15,4 +18,13 @@ def pytest_collection_modifyitems(items):
         item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
         print('用例名：', item.name)
         print('用例节点：', item.nodeid)
+
+
+
+@pytest.fixture(scope="session")
+def get_init():
+    main = App().start()
+    yield main
+    main.stop()
+
 

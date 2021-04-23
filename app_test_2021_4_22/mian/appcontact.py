@@ -4,13 +4,11 @@
 # @Author : BLUE_JUZIUPUP
 from appium.webdriver.common.mobileby import MobileBy
 
-from HogwartsSDE18.app_test_2021_4_22.test_case.AddBrother import AddBrother
-from HogwartsSDE18.app_test_2021_4_22.test_case.BasePage import Base_Page
+from app_test_2021_4_22.mian.AddBrother import AddBrother
+from app_test_2021_4_22.mian.BasePage import BasePage
 
 
-class app_contact(Base_Page):
-
-
+class app_contact(BasePage):
     def appcontact(self):
         """
 
