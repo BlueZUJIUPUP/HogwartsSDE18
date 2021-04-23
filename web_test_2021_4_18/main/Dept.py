@@ -5,8 +5,9 @@
 
 from selenium.webdriver.common.by import By
 
-from web_test_2021_4_18.main.base_page import BasePage
-from web_test_2021_4_18.main.main import mian_list
+from HogwartsSDE18.web_test_2021_4_18.main.base_page import BasePage
+from HogwartsSDE18.web_test_2021_4_18.main.main import mian_list
+
 
 class dept(BasePage):
     # 点击"+"

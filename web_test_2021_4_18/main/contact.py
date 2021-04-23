@@ -4,8 +4,8 @@
 # @Author : BLUE_JUZIUPUP
 from selenium.webdriver.common.by import By
 
-from web_test_2021_4_18.main.Dept import dept
-from web_test_2021_4_18.main.base_page import BasePage
+from HogwartsSDE18.web_test_2021_4_18.main.Dept import dept
+from HogwartsSDE18.web_test_2021_4_18.main.base_page import BasePage
 
 
 class contact(BasePage):

@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*
 import pytest
 
-from web_test_2021_4_18.main.contact import contact
+from HogwartsSDE18.web_test_2021_4_18.main.contact import contact
 
 
 class Test_case:

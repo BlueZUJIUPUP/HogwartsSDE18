@@ -1,4 +1,26 @@
 {
-  "total" : 30,
-  "items" : [ ]
+  "total" : 27,
+  "items" : [ {
+    "uid" : "12f540add11f03cb19eafe2cf0a1caf3",
+    "name" : "固定顺序执行case，执行顺序为4-1-2-3",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 4,
+      "unknown" : 0,
+      "total" : 4
+    }
+  }, {
+    "uid" : "31e7a0bf8f2acb7ed8e119a376769d13",
+    "name" : "参数化数据运算",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 2,
+      "unknown" : 0,
+      "total" : 2
+    }
+  } ]
 }

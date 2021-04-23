@@ -7,8 +7,10 @@ import time
 from appium import webdriver
 from appium.webdriver.common.touch_action import TouchAction
 
+from HogwartsSDE18.app_test_2021_4_22.test_case.BasePage import Base_Page
 
-class Test_suger():
+
+class Test_suger(Base_Page):
     def setup_class(self):
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
@@ -47,5 +49,6 @@ class Test_suger():
                                                          'instance(0));' ).click()
          #1                                                
         '''
+
 
 
