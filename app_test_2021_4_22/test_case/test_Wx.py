@@ -8,6 +8,7 @@ import pytest
 
 from app_test_2021_4_22.page.App import App
 from app_test_2021_4_22.page.main_page import main_page
+from app_test_2021_4_22.utils.get_random_info import get_random_info
 
 
 @allure.feature("添加联系人测试")
@@ -30,7 +31,10 @@ class Test_Wx:
         print("jiesu_class")
 
     def test_add_member(self):
-        self.main.goto_contact().goto_addmember().goto_edit_member_page().edit_member().find_toast()
+        data = get_random_info()
+        name = data.get_random_name()
+        phone = data.get_random_phonenumber()
+        self.main.goto_contact().goto_addmember().goto_edit_member_page().edit_member(name,phone).find_toast()
 
 
     @allure.story("添加联系人成功")

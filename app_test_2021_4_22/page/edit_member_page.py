@@ -22,4 +22,4 @@ class edit_member_page(BasePage):
         self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/gur').click()
 
         from app_test_2021_4_22.page.addmember_page import addmember_page
-        return addmember_page()
+        return addmember_page(self.driver)
