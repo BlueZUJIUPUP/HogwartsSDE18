@@ -4,8 +4,8 @@
 # @Author : BLUE_JUZIUPUP
 import pytest
 
-from app_test_2021_4_22.mian.App import App
-from app_test_2021_4_22.mian.BasePage import BasePage
+from app_test_2021_4_22.page.App import App
+from app_test_2021_4_22.page.BasePage import BasePage
 
 
 def pytest_collection_modifyitems(items):
@@ -20,11 +20,11 @@ def pytest_collection_modifyitems(items):
         print('用例节点：', item.nodeid)
 
 
-
-@pytest.fixture(scope="session")
-def get_init():
-    main = App().start()
-    yield main
-    main.stop()
+#
+# @pytest.fixture(scope="session")
+# def get_init():
+#     main = App().start()
+#     yield main
+#     main.stop()
 
 
