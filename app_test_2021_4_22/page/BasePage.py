@@ -45,3 +45,15 @@ class BasePage:
                 self.driver.implicitly_wait(5)
                 raise NoSuchElementException(f"找了{i}次，未找到")
 
+    def find(self,by,vlues):
+        logging.info(by)
+        logging.info(vlues)
+        return self.driver.find_element(by,vlues)
+
+    def find_toast(self,by,vlues):
+        try:
+            self.find(by,vlues)
+            logging.info("发现toast")
+            return True
+        except:
+            return False

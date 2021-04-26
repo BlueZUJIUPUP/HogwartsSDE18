@@ -29,6 +29,7 @@ class App(BasePage):
             desired_caps['autoAcceptAlerts'] = 'true'
             # desired_caps['dontStopAppOnReset'] = 'true'
             desired_caps['noReset'] = 'true'
+            desired_caps['skipDeviceInitialization'] = True
             self.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
             self.driver.implicitly_wait(10)
 

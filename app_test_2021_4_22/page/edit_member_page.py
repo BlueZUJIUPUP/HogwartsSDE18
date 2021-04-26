@@ -15,11 +15,9 @@ class edit_member_page(BasePage):
         :param phone: 成员手机号
         :return: 点击保存后跳转回添加成员选择方式页面
         """
-        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/au0').send_keys(name)
-        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/eq7').send_keys(phone)
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="设置部门"]').click()
-        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/fmw').click()
-        self.driver.find_element(MobileBy.ID, 'com.tencent.wework:id/gur').click()
+        self.find(MobileBy.XPATH, '//*[contains(@text,"姓名") ]/../android.widget.EditText').send_keys(name)
+        self.find(MobileBy.XPATH, '//*[contains(@text,"手机")]/..//*[@text="必填"]').send_keys(phone)
+        self.find(MobileBy.XPATH, '//*[@text="保存"]').click()
 
         from app_test_2021_4_22.page.addmember_page import addmember_page
         return addmember_page(self.driver)

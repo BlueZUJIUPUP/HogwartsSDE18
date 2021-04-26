@@ -16,6 +16,7 @@ class get_random_info():
         :return:
         """
         random_name = self.fake_data.name()
+        print(random_name)
         return random_name
 
     def get_random_phonenumber(self):
@@ -24,6 +25,7 @@ class get_random_info():
         :return:
         """
         random_phonenumber = self.fake_data.phone_number()
+        print(random_phonenumber)
         return random_phonenumber
 
 

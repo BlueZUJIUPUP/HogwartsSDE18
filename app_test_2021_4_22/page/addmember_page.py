@@ -12,9 +12,8 @@ from app_test_2021_4_22.page.edit_member_page import edit_member_page
 
 class addmember_page(BasePage):
 
-
     def goto_edit_member_page(self):
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="手动输入添加"]').click()
+        self.find(MobileBy.XPATH, '//*[@text="手动输入添加"]').click()
         return edit_member_page(self.driver)
 
     def back_contact(self):
@@ -22,12 +21,9 @@ class addmember_page(BasePage):
         from app_test_2021_4_22.page.contact_page import contact_page
         return contact_page(self.driver)
 
-    def find_toast(self):
-        try:
-            self.driver.find_element(MobileBy.XPATH,"//*[@text='已完成'")
-            print("发现toast")
-            return True
-        except:
-            return False
+    def assert_add_succeed(self):
+        return self.find_toast(MobileBy.XPATH, '//*[@text="添加成功"]')
+
+
 
 

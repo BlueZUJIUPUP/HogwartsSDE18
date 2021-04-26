@@ -12,5 +12,5 @@ class main_page(BasePage):
 
 
     def goto_contact(self):
-        self.driver.find_element(MobileBy.XPATH, '//*[@text="通讯录"]').click()
+        self.find(MobileBy.XPATH, '//*[@text="通讯录"]').click()
         return contact_page(self.driver)
