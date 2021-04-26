@@ -43,7 +43,7 @@ class BasePage:
                 self.driver.swipe(start_x, start_y, end_x, end_y, duration)
             if i == num - 1:
                 self.driver.implicitly_wait(5)
-                raise NoSuchElementException(f"找了{i}次，未找到")
+                raise NoSuchElementException(logging.info(f"找了{i}次，未找到"))
 
     def find(self,by,vlues):
         logging.info(by)

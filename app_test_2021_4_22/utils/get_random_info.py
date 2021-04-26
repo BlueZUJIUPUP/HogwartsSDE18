@@ -28,8 +28,12 @@ class get_random_info():
         print(random_phonenumber)
         return random_phonenumber
 
-
+    def nmsl(self):
+        name="da"
+        phone ='13'
+        return name,phone
 if __name__ == '__main__':
     a = get_random_info()
-    print(a.get_random_name())
-    print(a.get_random_phonenumber())
+    print(a.nmsl())
+    print(a.nmsl()[1])
+    print(a.nmsl()[0])
