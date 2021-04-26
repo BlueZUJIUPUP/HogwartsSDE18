@@ -19,9 +19,7 @@ class Test_Wx:
     def setup_class(self):
         logging.info("开始测试_class")
         self.app = App()
-        self.data = get_random_info()
-        self.name = self.data.get_random_name()
-        self.phone = self.data.get_random_phonenumber()
+
 
     def setup(self):
         self.main = self.app.start().goto_main()
@@ -42,31 +40,18 @@ class Test_Wx:
         添加联系人用例
         :return: 成功或失败
         """
+        self.data = get_random_info()
+        self.name = self.data.get_random_name()
+        self.phone = self.data.get_random_phonenumber()
         logging.info(self.name+self.phone)
         succeed = self.main.goto_contact().goto_addmember().goto_edit_member_page().edit_member(self.name, self.phone).assert_add_succeed()
         logging.info(succeed)
         assert succeed == True
 
-
     @allure.story("测试删除联系人联系人")
     @allure.severity('normal')
-    def test_add_member01(self, get_init, name, phone):
-        """
-
-        :param get_init: 初始函数
-        :param name: 添加的成员的名字
-        :param phone: 添加的成员的手机号
-        :return:
-        """
-        # with allure.step("进入添加联系人页面"):
-        #     self.res = home_page().go_contact().appcontact()
-        #
-        # with allure.step("输入联系人信息并保存"):
-        #     self.contact_name = self.res.addBrother(name,phone).find_by_scroll(name).text
-        #
-        # with allure.step("验证是否添加成功"):
-        #     assert self.contact_name == name
-        pass
+    def test_del_member(self):
+        del_member = self.main.goto_contact()
 
 
 
