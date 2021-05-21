@@ -52,3 +52,5 @@ class TestWework:
         print(json.dumps(r.json(), indent=2, ensure_ascii=False))
         assert r.json()["errcode"] == 0
         self.test_search()
+
+
