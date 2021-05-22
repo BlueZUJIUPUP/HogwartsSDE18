@@ -12,7 +12,6 @@ class WeWork:
         self.corpid = "wwf443a769ec9a969f"
         self.corpsecret = "vMWlkH8N-37OO4rm8qMk-279RjECOsogSin_I9kE-AA"
 
-
     def get_access_token(self):
         r = requests.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken',
                          params=({

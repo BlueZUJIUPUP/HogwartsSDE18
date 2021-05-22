@@ -6,7 +6,7 @@
 # @Software: PyCharm
 import json
 
-from wechat_api_test_2021_05_21.WeWork import WeWork
+from wechat_api_test_2021_05_21.WeWoekApi.tag_Api import WeWork
 
 
 class base(WeWork):

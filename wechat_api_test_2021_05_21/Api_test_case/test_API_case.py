@@ -5,10 +5,9 @@
 import json
 import time
 
-import requests
 from faker import Faker
 
-from wechat_api_test_2021_05_21.base import base
+from wechat_api_test_2021_05_21.utils.base import base
 
 
 class TestWework:
