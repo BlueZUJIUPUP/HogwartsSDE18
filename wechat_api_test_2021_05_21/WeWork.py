@@ -23,6 +23,7 @@ class WeWork:
         r = requests.post("https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_corp_tag_list",
                           params ={"access_token":self.access_token},
                           json = {})
+        print(json.dumps(r.json(), indent=2, ensure_ascii=False))
         return r
 
     def add_tag(self):
@@ -35,6 +36,7 @@ class WeWork:
                                             "name": "nmsl3-1",
                                         }],
                                 })
+        print(json.dumps(r.json(), indent=2, ensure_ascii=False))
         return r
 
 
@@ -49,4 +51,5 @@ class WeWork:
                                     "etSh86BgAAviLNsY7PeSBZoRtFNIJraw",
                                 ]
                           })
+        print(json.dumps(r.json(), indent=2, ensure_ascii=False))
         return r
