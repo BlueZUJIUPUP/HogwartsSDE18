@@ -4,7 +4,7 @@
 # @Author : BLUE_JUZIUPUP
 import logging
 
-from appium import webdriver
+#from appium import webdriver
 
 from app_test_2021_4_22.page.BasePage import BasePage
 from app_test_2021_4_22.page.main_page import main_page
