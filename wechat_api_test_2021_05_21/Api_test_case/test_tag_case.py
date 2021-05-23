@@ -7,14 +7,14 @@ import time
 
 from faker import Faker
 
-from wechat_api_test_2021_05_21.utils.base import base
+from wechat_api_test_2021_05_21.utils.utils import Utils
 
 
-class TestWework:
+class TestWework():
     def setup_class(self):
         self.fake = Faker()
-        self.wework = base()
-        self.wework.get_access_token()
+        self.wework = Utils()
+        self.access_token = self.wework.get_access_token()
 
     def test_search(self):
         r = self.wework.search()

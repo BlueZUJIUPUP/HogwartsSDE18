@@ -6,22 +6,10 @@ import json
 
 import requests
 
+from wechat_api_test_2021_05_21.WeWoekApi.Base import Base
 
-class WeWork:
-    def __init__(self):
-        self.corpid = "wwf443a769ec9a969f"
-        self.corpsecret = "vMWlkH8N-37OO4rm8qMk-279RjECOsogSin_I9kE-AA"
 
-    def get_access_token(self):
-        r = requests.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken',
-                         params=({
-                             "corpid": self.corpid,
-                             "corpsecret": self.corpsecret}))
-        assert r.json()["errcode"] == 0
-        print(r.json()["access_token"])
-        self.access_token = r.json()["access_token"]
-        return self.access_token
-
+class Tag_Api(Base):
     def search(self,tag_id = None , group_id = None):
         r = requests.post("https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_corp_tag_list",
                           params ={"access_token":self.access_token},

@@ -2,14 +2,14 @@
 # @Time    : 2021/5/23 0:34
 # @Author  : BLUE_JUZIUPUP
 # @Email   : z1003033614@163.com
-# @File    : base.py
+# @File    : utils.py
 # @Software: PyCharm
 import json
 
-from wechat_api_test_2021_05_21.WeWoekApi.tag_Api import WeWork
+from wechat_api_test_2021_05_21.WeWoekApi.tag_Api import Tag_Api
 
 
-class base(WeWork):
+class Utils(Tag_Api):
     def select(self,name1,name2,f = None):
         select = self.search()
         data = json.dumps(select.json(), indent=2, ensure_ascii=False)
