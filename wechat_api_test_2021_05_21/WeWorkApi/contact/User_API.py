@@ -7,9 +7,10 @@
 import requests
 
 from wechat_api_test_2021_05_21.WeWorkApi.Base import Base
+from wechat_api_test_2021_05_21.WeWorkApi.WorkApi import WeWork
 
 
-class User_API(Base):
+class User_API(WeWork):
     def create_User(self,userid,name,mobile,department,email):
         r = requests.post("https://qyapi.weixin.qq.com/cgi-bin/user/create",
                           params ={"access_token":self.access_token},

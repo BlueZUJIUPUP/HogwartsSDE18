@@ -6,9 +6,10 @@
 # @Software: PyCharm
 import requests
 
-from wechat_api_test_2021_05_21.WeWorkApi.Base import Base
+from wechat_api_test_2021_05_21.WeWorkApi.WorkApi import WeWork
 
-class department_API(Base):
+
+class department_API(WeWork):
 
 
     def get_department(self):
@@ -20,7 +21,7 @@ class department_API(Base):
         r = requests.get("https://qyapi.weixin.qq.com/cgi-bin/department/delete",
                          params=({"access_token": self.access_token,
                                   "id" : id
-                                  }),headers = self.headers)
+                                  }))
         print(r.json())
         return r
 

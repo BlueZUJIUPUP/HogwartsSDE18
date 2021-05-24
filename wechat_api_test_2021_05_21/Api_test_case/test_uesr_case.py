@@ -8,17 +8,19 @@ import json
 
 from faker import Faker
 
-from wechat_api_test_2021_05_21.WeWorkApi.User_API import User_API
-from wechat_api_test_2021_05_21.WeWorkApi.department_API import department_API
+from wechat_api_test_2021_05_21.WeWorkApi.contact.User_API import User_API
+from wechat_api_test_2021_05_21.WeWorkApi.contact.department_API import department_API
 
 
 class TestWework:
     def setup_class(self):
+        corpid = "wwf443a769ec9a969f"
+        contact_corpsecret = 'qmxhWtaN4Afxz-72cJbutxQ-0EY93yJdOciqVhKSsb4'
         self.fake = Faker(locale='zh_CN')
         self.wework = User_API()
-        self.access_token = self.wework.get_access_token()
+        self.wework.get_access_token(corpid,contact_corpsecret)
         self.department = department_API()
-        self.access_token = self.department.get_access_token()
+        self.department.get_access_token(corpid,contact_corpsecret)
 
 
     def test_Adduesr(self):
