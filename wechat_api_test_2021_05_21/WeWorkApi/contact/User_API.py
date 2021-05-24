@@ -11,27 +11,36 @@ from wechat_api_test_2021_05_21.WeWorkApi.WorkApi import WeWork
 
 
 class User_API(WeWork):
-    def create_User(self,userid,name,mobile,department,email):
-        r = requests.post("https://qyapi.weixin.qq.com/cgi-bin/user/create",
-                          params ={"access_token":self.access_token},
-                          json = {
-                                    "userid": userid,
-                                    "name": name,
-                                     "alias": "jackzhang",
-                                    "mobile": mobile,
-                                    "department": department,
-                                      "order": [10, 40],
-                                      "position": "产品经理",
-                                      "gender": "1",
-                                    "email": email,
-                                    "telephone": "020-123456",
-                                    "main_department": 1
-                                })
+    def create_User(self, userid, name, mobile, department, email, **kwargs):
+        if "json" in kwargs:
+            json = kwargs["json"]
+        else:
+            json = {
+                "userid": userid,
+                "name": name,
+                "alias": "jackzhang",
+                "mobile": mobile,
+                "department": department,
+                "order": [10, 40],
+                "email": email,
+            }
+        data = {
+            "url": 'https://qyapi.weixin.qq.com/cgi-bin/user/create',
+            'method': "post",
+            'params': {
+                "access_token": self.access_token
+            },
+            'json': json
+        }
+        r = self.request(data)
         return r
-    def del_User(self,userid):
-        r = requests.get("https://qyapi.weixin.qq.com/cgi-bin/user/delete",
-                          params =({"access_token":self.access_token,
-                                    "userid" : userid
-                                   }))
-        print(r.json())
+
+    def del_User(self, userid):
+        data = {"url": "https://qyapi.weixin.qq.com/cgi-bin/user/delete",
+                'method': "post",
+                "params" : {"access_token": self.access_token,
+                            "userid": userid
+                            }
+                }
+        r = self.request(data)
         return r

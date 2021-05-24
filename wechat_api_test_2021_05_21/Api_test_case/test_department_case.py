@@ -14,14 +14,15 @@ from wechat_api_test_2021_05_21.WeWorkApi.contact.department_API import departme
 
 class Testdepartment():
     def setup_class(self):
+        corpid = "wwf443a769ec9a969f"
+        contact_corpsecret = 'qmxhWtaN4Afxz-72cJbutxQ-0EY93yJdOciqVhKSsb4'
         self.fake = Faker(locale='zh_CN')
         self.department = department_API()
-        self.access_token = self.department.get_access_token()
+        self.access_token = self.department.get_access_token(corpid,contact_corpsecret)
 
     def test_del_department(self):
         del_department_id = self.department.get_department().json()['department'][-1]['id']
         print(del_department_id)
-        print(type(del_department_id))
         e = self.department.del_department(del_department_id)
         assert e.json()["errcode"] == 0
-        assert del_department_id not in json.dump(self.department.get_department().json(), indent=2, ensure_ascii=False)
+        assert del_department_id != self.department.get_department().json()['department'][-1]['id']

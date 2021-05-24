@@ -27,12 +27,14 @@ class TestWework:
         userid = self.fake.user_name()
         name = self.fake.name()
         mobile = "+86 "+ self.fake.phone_number()
-        department =[self.department.get_department().json()['department'][0]['id']]
+        department =[self.department.get_department().json()['department'][-1]['id']]
         email = self.fake.ascii_company_email()
         print(f"userid:{userid},name:{name},mobile:{mobile},department:{department},email:{email}")
-        e = self.wework.create_User(userid,name,mobile,department,email)
+        e = self.wework.create_User(userid,name,mobile,department=[4],email=email)
         print(e.json())
         assert e.json()["errcode"] == 0
+
+
     def test_delUser(self):
         print(self.department.get_department().json())
         userid = self.department.get_department_uesr().json()["userlist"][0]["userid"]
