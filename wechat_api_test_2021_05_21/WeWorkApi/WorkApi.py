@@ -4,9 +4,10 @@
 # @Email   : z1003033614@163.com
 # @File    : WorkApi.py
 # @Software: PyCharm
+import logging
 
 from wechat_api_test_2021_05_21.WeWorkApi.Base import Base
-
+logging.basicConfig(level=logging.INFO)
 
 class WeWork(Base):
 
@@ -22,3 +23,4 @@ class WeWork(Base):
         r = self.request(data)
         assert r.json()["errcode"] == 0
         self.access_token = r.json()["access_token"]
+        logging.info(self.access_token)

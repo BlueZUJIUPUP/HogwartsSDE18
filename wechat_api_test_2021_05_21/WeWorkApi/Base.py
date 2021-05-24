@@ -5,8 +5,11 @@
 # @File    : Base.py
 # @Software: PyCharm
 import json
+import logging
 
 import requests
+logging.basicConfig(level=logging.INFO)
+
 
 class Base:
 
@@ -21,7 +24,7 @@ class Base:
 
     def http_request(self, datas):
         r = requests.request(**datas)
-        print(json.dumps(r.json(), indent=2, ensure_ascii=False))
+        logging.info(json.dumps(r.json(), indent=2, ensure_ascii=False))
         return r
 
     def rpc_request(self,datas):

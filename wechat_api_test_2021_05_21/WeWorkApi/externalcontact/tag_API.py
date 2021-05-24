@@ -3,13 +3,13 @@
 # @Time   : 2021/5/22 20:10 
 # @Author : BLUE_JUZIUPUP
 import json
-
-import requests
+import logging
 from wechat_api_test_2021_05_21.WeWorkApi.WorkApi import WeWork
-
+logging.basicConfig(level=logging.INFO)
 
 class Tag_Api(WeWork):
     def search(self, tag_id=None, group_id=None):
+        logging.info(self.__class__.__name__)
         data = {
             "url": 'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/get_corp_tag_list',
             'method': "post",
@@ -23,6 +23,7 @@ class Tag_Api(WeWork):
         return r
 
     def add_tag(self, tag_list, group_name,**kwargs):
+        logging.info(self.__class__.__name__)
         if "json" in kwargs:
             json_data = kwargs['json']
         else:
@@ -40,6 +41,7 @@ class Tag_Api(WeWork):
         return r
 
     def del_tag(self, tag_id=None, group_id=None):
+        logging.info(self.__class__.__name__)
         if tag_id != None or group_id != None:
             data = {
                 "url": 'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/del_corp_tag',
@@ -56,6 +58,7 @@ class Tag_Api(WeWork):
             print("需要一个tagid或者groupid")
 
     def edit_tag(self, TAG_ID, name):
+        logging.info(self.__class__.__name__)
         data = {
             "url": 'https://qyapi.weixin.qq.com/cgi-bin/externalcontact/edit_corp_tag',
             'method': "post",
@@ -68,15 +71,17 @@ class Tag_Api(WeWork):
         return r
 
     def clear_tag(self):
+        logging.info(self.__class__.__name__)
         r = self.search()
         tag_id_liat = [tag['id'] for group in r.json()['tag_group'] for tag in group['tag']]
         if len(tag_id_liat) != 0:
             self.del_tag(tag_id_liat)
-            print("清理完成")
+            logging.info("清理完成")
             return r
         else:
-            print("没有数据需要清理")
+            logging.info("没有数据需要清理")
     def select(self,name1,name2,f = None):
+        logging.info(self.__class__.__name__)
         select = self.search()
         data = json.dumps(select.json(), indent=2, ensure_ascii=False)
         if f == "in":
