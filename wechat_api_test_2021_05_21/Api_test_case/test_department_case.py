@@ -8,7 +8,8 @@ import json
 
 from faker import Faker
 
-from wechat_api_test_2021_05_21.WeWoekApi.department_API import department_API
+from wechat_api_test_2021_05_21.WeWorkApi.department_API import department_API
+
 
 
 class Testdepartment():

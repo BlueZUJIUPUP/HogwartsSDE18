@@ -8,7 +8,7 @@ import logging
 
 import pytest
 
-from wechat_api_test_2021_05_21.WeWoekApi.Base import Base
+from wechat_api_test_2021_05_21.WeWorkApi.Base import Base
 
 
 @pytest.fixture(scope="class")

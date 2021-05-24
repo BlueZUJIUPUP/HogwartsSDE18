@@ -6,7 +6,7 @@
 # @Software: PyCharm
 import json
 
-from wechat_api_test_2021_05_21.WeWoekApi.tag_Api import Tag_Api
+from wechat_api_test_2021_05_21.WeWorkApi.tag_API import Tag_Api
 
 
 class Utils(Tag_Api):
