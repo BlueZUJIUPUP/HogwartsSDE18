@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon May 24 23:09:56 CST 2021","Mon May 24 23:09:57 CST 2021","159","wechat_api_test_2021_05_21.Api_test_case","test_tag_case","TestWework","","","test_search",""
+"passed","Mon May 24 23:09:57 CST 2021","Mon May 24 23:09:57 CST 2021","389","wechat_api_test_2021_05_21.Api_test_case","test_tag_case","TestWework","","","test_add_tag",""
+"passed","Mon May 24 23:09:59 CST 2021","Mon May 24 23:09:59 CST 2021","853","wechat_api_test_2021_05_21.Api_test_case","test_tag_case","TestWework","","","test_edit_tag",""
+"passed","Mon May 24 23:09:58 CST 2021","Mon May 24 23:09:58 CST 2021","852","wechat_api_test_2021_05_21.Api_test_case","test_tag_case","TestWework","","","test_del_tag",""

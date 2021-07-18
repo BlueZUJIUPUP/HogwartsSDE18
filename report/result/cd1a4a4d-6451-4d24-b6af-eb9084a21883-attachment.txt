@@ -1,0 +1,48 @@
+INFO     root:tag_API.py:74 Tag_Api
+INFO     root:tag_API.py:12 Tag_Api
+INFO     root:Base.py:27 {
+  "errcode": 0,
+  "errmsg": "ok. Warning: wrong json format. ",
+  "tag_group": []
+}
+INFO     root:tag_API.py:82 没有数据需要清理
+INFO     root:tag_API.py:26 Tag_Api
+INFO     root:Base.py:27 {
+  "errcode": 0,
+  "errmsg": "ok",
+  "tag_group": {
+    "group_id": "etSh86BgAAYSEMb7gsAFVsoRZ8uAJm9Q",
+    "group_name": "测试19810926",
+    "create_time": 1621868997,
+    "tag": [
+      {
+        "id": "etSh86BgAAa4s3U7j3vKnxWQNSQpSxVw",
+        "name": "测试19810926",
+        "create_time": 1621868997,
+        "order": 0
+      }
+    ],
+    "order": 0
+  }
+}
+INFO     root:tag_API.py:12 Tag_Api
+INFO     root:Base.py:27 {
+  "errcode": 0,
+  "errmsg": "ok. Warning: wrong json format. ",
+  "tag_group": [
+    {
+      "group_id": "etSh86BgAAYSEMb7gsAFVsoRZ8uAJm9Q",
+      "group_name": "测试19810926",
+      "create_time": 1621868997,
+      "tag": [
+        {
+          "id": "etSh86BgAAa4s3U7j3vKnxWQNSQpSxVw",
+          "name": "测试19810926",
+          "create_time": 1621868997,
+          "order": 0
+        }
+      ],
+      "order": 0
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "wechat_api_test_2021_05_21.Api_test_case.test_tag_case",
+    "children" : [ {
+      "name" : "test_search",
+      "uid" : "e10cec6d4605e018",
+      "parentUid" : "e6746a4d9b196871e79bfc2abe84130c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1621868996858,
+        "stop" : 1621868997017,
+        "duration" : 159
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_add_tag",
+      "uid" : "48b76283a927bdaa",
+      "parentUid" : "e6746a4d9b196871e79bfc2abe84130c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1621868997209,
+        "stop" : 1621868997598,
+        "duration" : 389
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_del_tag",
+      "uid" : "c7b8f4dbcf2687b9",
+      "parentUid" : "e6746a4d9b196871e79bfc2abe84130c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1621868998043,
+        "stop" : 1621868998895,
+        "duration" : 852
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_edit_tag",
+      "uid" : "c9a2294e9f339bd4",
+      "parentUid" : "e6746a4d9b196871e79bfc2abe84130c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1621868999047,
+        "stop" : 1621868999900,
+        "duration" : 853
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "wechat_api_test_2021_05_21.Api_test_case.test_tag_case"
+  } ]
+}
