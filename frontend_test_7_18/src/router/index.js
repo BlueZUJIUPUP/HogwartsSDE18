@@ -2,13 +2,35 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 import Testcase from '../views/Testcase.vue'
+import Layout from '../views/Layout.vue'
+import Task from '../views/Task.vue'
+
 
 Vue.use(VueRouter)
 
 const routes = [
-  {path: '/',
-    name: 'Testcase',
-    component: Testcase
+  {
+    path : "/",
+    redirect:"/layout"
+  },
+  
+  {
+    path: '/layout',
+    name: 'layout',
+    component: Layout,
+    children:[
+      {
+        path: 'testcase',
+        name: 'testcase',
+        component: Testcase
+      },
+      {
+        path: 'task',
+        name: 'task',
+        component: Task
+      }
+    ]
+    
   },
   // {
   //   path: '/',
