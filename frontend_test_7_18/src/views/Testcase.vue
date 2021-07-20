@@ -14,6 +14,7 @@
         <v-toolbar-title> 测试用例</v-toolbar-title>
         <v-divider class="mx-4" inset vertical></v-divider>
         <v-spacer></v-spacer>
+        <!-- <v-btn color="green" @click="getCaseList()">测试接口</v-btn> -->
         <v-btn color="green" dark class="mb-2" @click="executeCase()">执行用例</v-btn>
         <v-dialog v-model="dialog" max-width="500px">
           <template v-slot:activator="{ on, attrs }">
@@ -107,8 +108,8 @@ export default {
     editedIndex: -1,
     editedItem: {
       id: "",
-      nodeID: 0,
-      remark: 0,
+      nodeID: '',
+      remark: '',
     },
     defaultItem: {
       id: "",
@@ -122,6 +123,7 @@ export default {
       return this.editedIndex === -1 ? "新建用例" : "编辑用例";
     },
   },
+  
 
   watch: {
     dialog(val) {
@@ -129,32 +131,28 @@ export default {
     },
     dialogDelete(val) {
       val || this.closeDelete();
-    },
+    }
   },
+
 
   created() {
     this.initialize();
+    
   },
+//   updated () {
+//     this.initialize();
+//     },
 
   methods: {
     initialize() {
-      this.desserts = [
-        {
-          id: "Frozen Yogurt",
-          nodeID: 159,
-          remark: 6.0,
-        },
-        {
-          id: "1",
-          nodeID: 159,
-          remark: 6.0,
-        },
-        {
-          id: "2",
-          nodeID: 159,
-          remark: 6.0,
-        },
-      ];
+        let post_data = {
+        }
+        this.$api.cases.getCaseList(post_data).then(res=>{
+                // console.log(res)
+                // // this.toast res.data.message
+                // console.log(res.data.msg.data)
+                this.desserts=res.data.msg.data
+            })
     },
 
     editItem(item) {
@@ -171,7 +169,17 @@ export default {
 
     deleteItemConfirm() {
       //删除用例的OK
-      this.desserts.splice(this.editedIndex, 1);
+    //   this.desserts.splice(this.editedIndex, 1);
+        console.log(this.editedItem)
+        let post_data = {'id':this.editedItem.id}
+        console.log(post_data)
+        this.$api.cases.deleteCase(post_data).then(res=>{
+                console.log(res)
+                // // this.toast res.data.message
+                // console.log(res.data.msg.data)
+                // this.desserts=res.data.msg.data
+                this.initialize()
+            })
       this.closeDelete();
     },
 
@@ -196,17 +204,44 @@ export default {
         //   console.log("this.editedIndex > -1")
         // Object.assign(this.desserts[this.editedIndex], this.editedItem);
         // 编辑用例的save
+        let post_data = {
+            "id": this.editedItem.id, 
+            'nodeID': this.editedItem.nodeID, 
+            'remark': this.editedItem.remark
+        }
+        this.$api.cases.updateCase(post_data).then(res=>{
+                console.log(res)
+                // this.toast res.data.message
+                // console.log(res.data.msg.data)
+                // this.desserts=res.data.msg.data
+                this.initialize();
+            })
       } else {
         // this.desserts.push(this.editedItem);
         // console.log("this.editedIndex < -1")
         // 新建用例的save
+        let post_data = {
+            "id": this.editedItem.id, 
+            'nodeID': this.editedItem.nodeID, 
+            'remark': this.editedItem.remark
+        }
+        this.$api.cases.createCase(post_data).then(res=>{
+                console.log(res)
+                // this.toast res.data.message
+                // console.log(res.data.msg.data)
+                // this.desserts=res.data.msg.data
+                this.initialize();
+            })
+
+
       }
       this.close();
     },
     executeCase(){
         // console.log("执行用例")
         console.log(this.selected)
-    }
+    },
+    
   },
 };
 </script>
