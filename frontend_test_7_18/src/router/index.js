@@ -5,6 +5,11 @@ import Testcase from '../views/Testcase.vue'
 import Layout from '../views/Layout.vue'
 import Task from '../views/Task.vue'
 
+const originalPush = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this,location).catch(err => err)
+}
 
 Vue.use(VueRouter)
 

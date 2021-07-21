@@ -89,6 +89,7 @@
 <script>
 export default {
   data: () => ({
+    oldid:"",
     singleSelect: false,
     selected: [],
     dialog: false,
@@ -156,9 +157,12 @@ export default {
     },
 
     editItem(item) {
-      this.editedIndex = this.desserts.indexOf(item);
+      this.editedIndex = this.desserts.indexOf(item);    
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
+      //获取旧的用例id
+      this.oldid =  this.editedItem.id  
+      // console.log(this.oldid)
     },
 
     deleteItem(item) {
@@ -204,11 +208,19 @@ export default {
         //   console.log("this.editedIndex > -1")
         // Object.assign(this.desserts[this.editedIndex], this.editedItem);
         // 编辑用例的save
+        let oldid = this.oldid
+        // console.log(oldid)
         let post_data = {
+          'oldData':{
+            'id': oldid
+            },
+          'newData':{
             "id": this.editedItem.id, 
             'nodeID': this.editedItem.nodeID, 
             'remark': this.editedItem.remark
+            }
         }
+        console.log(post_data)
         this.$api.cases.updateCase(post_data).then(res=>{
                 console.log(res)
                 // this.toast res.data.message

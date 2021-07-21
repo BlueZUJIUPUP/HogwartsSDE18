@@ -5,10 +5,12 @@
 import json
 
 from flask import Flask, request
+from flask_cors import CORS
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)
 api = Api(app)
 username = "root"
 pwd = "123456"
@@ -23,7 +25,7 @@ db = SQLAlchemy(app)
 
 class testCase(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nodeid = db.Column(db.String(80), nullable=False)
+    nodeID = db.Column(db.String(80), nullable=False)
     remark = db.Column(db.String(120))
 
     def as_dict(self):
@@ -32,7 +34,7 @@ class testCase(db.Model):
         :return:
         """
         return {"id": self.id,
-                "nodeid": self.nodeid,
+                "nodeID": self.nodeID,
                 "remark": self.remark}
 
 
@@ -63,10 +65,19 @@ class TestCaseService(Resource):
         testcase = testCase(**data)
         # 把数据对象，添加在session中
         # 对应git commit的操作，可以提交多次
-        testcase.nodeid = json.dumps(request.json.get("nodeid"))
-        db.session.add(testcase)
-        db.session.commit()
-        return {"error": 0, "msg": 'post success'}
+        data_ID = data['id']
+        app.logger.info(data_ID)
+        r= testCase.query.filter_by(id=data_ID).all()
+        app.logger.info(r)
+        if r == []:
+            testcase.nodeid = json.dumps(request.json.get("nodeid"))
+            db.session.add(testcase)
+            db.session.commit()
+            return {"error": 0, "msg": 'post success'}
+
+        else:
+            return {"error": 40005, "msg": 'id except'}
+
 
 
     def put(self):
@@ -75,19 +86,23 @@ class TestCaseService(Resource):
         :return:
         """
         app.logger.info(request.json)
-        try:
-            id = json.dumps(request.json.get("id"))
-            if id != None:
-                testCase.query.filter_by(id=id).update(request.json)
-                db.session.commit()
-                app.logger.info(f"数据已修改，id{id}被修改为{request.json}")
-                return {"error": 0, "msg": {"data": 'update success'}}
+        if request.json != None:
+            try:
+                old_id=request.json["oldData"]['id']
+                app.logger.info(f"old_id:{old_id}")
+                newData = request.json["newData"]
+                app.logger.info(f"newData:{newData}")
+                if old_id != None:
+                    testCase.query.filter_by(id=old_id).update(newData)
+                    db.session.commit()
+                    app.logger.info(f"数据已修改，id:{old_id}  被修改为{newData}")
+                    return {"error": 0, "msg": {"data": 'update success'}}
 
-            else:
-                return {"error": 40002, "msg": "ID can't null"}
-        except AttributeError:
-            return {"error": 40003, "msg": "args except"}
-
+                else:
+                    return {"error": 40002, "msg": "ID can't null"}
+            except AttributeError:
+                return {"error": 40003, "msg": "args except"}
+        else:return {"error": 40004, "msg": "args except"}
 
     def delete(self):
         """

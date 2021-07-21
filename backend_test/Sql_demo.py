@@ -67,7 +67,7 @@ if __name__ == '__main__':
     ### 条件查询, 我要去查询 id = 1 的时候的数据信息
     # res = User.query.filter_by(gender="男").all()
     # 拿到查询结果的第一条
-    # res = User.query.filter_by(gender="男").first()
+    # res = User.query.filter_by(gender="女").first()
     # print(res.username, res.email, res.gender)
     # 通过表达式查询
     # res = User.query.all()
@@ -82,5 +82,5 @@ if __name__ == '__main__':
     # res.gender = "男"
     # db.session.commit()
     ### 第二种方法
-    # res =User.query.filter_by(id=1).update({"gender": "女", "email": "99@qq.com"})
+    res =User.query.filter_by(id=2).update({"id":"34","gender": "212", "email": "912@qq.com"})
     db.session.commit()

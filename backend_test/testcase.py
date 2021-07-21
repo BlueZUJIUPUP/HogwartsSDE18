@@ -21,7 +21,7 @@ class Testcase:
         assert r.status_code == 200
 
     def test_post(self):
-        data = {"id": 5, 'nodeid': 5, 'remark': 5}
+        data = {"id": 98, 'nodeID': 'nmslwsnd', 'remark': 'nmml'}
         r = requests.post(url=self.url, json=data)
         assert r.status_code == 200
 
@@ -31,7 +31,16 @@ class Testcase:
         print(r.text)
 
     def test_put2(self):
-        data = {"id": 2, 'nodeid': '12', 'remark': '12'}
+        data = {
+            'oldData':{
+                "id": '213',
+            },
+            'newData':{
+                "id":66,
+                'nodeID': '221',
+                'remark': '1'
+            }
+        }
         r = requests.put(url=self.url, json=data)
         assert r.status_code == 200
         print(r.text)
