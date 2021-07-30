@@ -74,3 +74,25 @@ class Testcase:
         r = requests.get("http://stuq.ceshiren.com:8089/user/isLogin", headers=headers)
         print(r.text)
 
+
+    def test_04(self):
+        headers = {
+            "Content-Type": "application/json",
+            # "token": "f762e83f8662e7985aa5cb557a2dd026"
+        }
+        data = {"activityShopId": "15676785713",
+                "password": "123456",
+                'name':'Eidolon'}
+        r = requests.get('http://api-test.baojun.net/base/activity/apply/record/save',params=data,headers=headers)
+        print(r.text)
+
+    def test_05(self):
+        headers = {
+            "Content-Type": "application/json",
+            # "token": "f762e83f8662e7985aa5cb557a2dd026"
+        }
+        data = {"pageNo": "10",
+                "pageSize": '10'}
+        r = requests.get('https://api-test.baojun.net/base/activity/shop/all/list',params=data,headers=headers)
+        print(r.text)
+

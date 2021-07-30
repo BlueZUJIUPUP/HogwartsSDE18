@@ -27,3 +27,8 @@ class Testone:
     def test_sub(self, a, b, expect):
         assert expect == a - b
 
+    def test_01(self):
+        import os
+        print(os.path.abspath(__file__))
+        print(os.path.dirname(__file__))
+

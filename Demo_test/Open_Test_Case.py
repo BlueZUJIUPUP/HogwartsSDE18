@@ -4,11 +4,14 @@
 # @Author : BLUE_JUZIUPUP
 import yaml
 
+import os
+
+path = os.path.dirname(__file__)
 
 #读取yaml文件的用例集
 def open_test():
-    with open(r'C:\Users\BLUE_JUZIUPUP\Desktop\hgwc\HogwartsSDE18\Hogwarts_work\test_case.yaml', mode='r',encoding="utf-8") as f:
-        a = yaml.load(f,Loader=yaml.FullLoader)
+    with open(f'{path}/test_case.yaml',encoding="utf-8") as f:
+        a = yaml.load(f)
         add = a['add_test']
         sub = a['sub_test']
         return add,sub
