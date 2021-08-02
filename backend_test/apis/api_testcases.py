@@ -46,6 +46,7 @@ class TestCaseService(Resource):
             testcase.nodeid = json.dumps(request.json.get("nodeid"))
             db.session.add(testcase)
             db.session.commit()
+            db.session.close()
             return {"error": 0, "msg": 'post success'}
 
         else:
@@ -68,6 +69,7 @@ class TestCaseService(Resource):
                 if old_id != None:
                     testCase.query.filter_by(id=old_id).update(newData)
                     db.session.commit()
+                    db.session.close()
                     app.logger.info(f"数据已修改，id:{old_id}  被修改为{newData}")
                     return {"error": 0, "msg": {"data": 'update success'}}
 
@@ -87,6 +89,7 @@ class TestCaseService(Resource):
             app.logger.info(data_ID)
             testCase.query.filter_by(id=data_ID).delete()
             db.session.commit()
+            db.session.close()
             return {"error": 0, "msg": 'delete success'}
         else:
             return {"error": 40002, "msg": "ID can't null"}

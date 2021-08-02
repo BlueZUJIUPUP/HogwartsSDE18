@@ -50,6 +50,22 @@ class Testcase:
         r = requests.delete(url=self.url, params=data)
         print(r.text)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Test_one:
     def test_01(self):
         headers = {"Content-Type": "application/json"}
         data = {"email": "1003033614@qq.com",

@@ -27,7 +27,9 @@ def router():
     from backend_test.apis.api_testcases import TestCaseService
     api.add_resource(TestCaseService, "/testcase")
 
+    from backend_test.apis.api_task import TaskService
+    api.add_resource(TaskService, "/task")
+
 if __name__ == '__main__':
     router()
-    # api.add_resource(TaskService, "/task")
     app.run(debug=True)

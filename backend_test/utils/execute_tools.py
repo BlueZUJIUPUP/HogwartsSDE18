@@ -6,7 +6,7 @@
 
 from jenkinsapi.jenkins import Jenkins
 class ExecuteTools:
-    URL = 'http://192.168.2.109:8080/'
+    URL = 'http://172.20.10.10:8080/'
     USERNAME = 'zio_zhou'
     PASSWORD = '117e96d128733408318471d73adb477c58'
     JOB_NAME = "test_ck18"
@@ -18,12 +18,12 @@ class ExecuteTools:
         return jenkins.keys()
 
     @classmethod
-    def invoke(cls):
+    def invoke(cls,testcase_name):
         jenkins = Jenkins(cls.URL,cls.USERNAME,cls.PASSWORD)
         # print(jenkins.keys())
         test_ck18 = jenkins.get_job(cls.JOB_NAME)
         # print test_ck18
-        test_ck18.invoke(build_params={"nmsl":"wsnd"})
+        test_ck18.invoke(build_params={"testcase_name":testcase_name})
         last_build_number = test_ck18.get_last_buildnumber()
         # print(last_build_number)
         while True:
