@@ -18,3 +18,6 @@ class testCase(db.Model):
         return {"id": self.id,
                 "nodeID": self.nodeID,
                 "remark": self.remark}
+
+if __name__ == '__main__':
+    db.create_all()

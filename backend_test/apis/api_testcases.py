@@ -38,9 +38,9 @@ class TestCaseService(Resource):
         testcase = testCase(**data)
         # 把数据对象，添加在session中
         # 对应git commit的操作，可以提交多次
-        data_ID = data['id']
+        data_ID = data['nodeID']
         app.logger.info(data_ID)
-        r= testCase.query.filter_by(id=data_ID).all()
+        r= testCase.query.filter_by(nodeID=data_ID).all()
         app.logger.info(r)
         if r == []:
             testcase.nodeid = json.dumps(request.json.get("nodeid"))
