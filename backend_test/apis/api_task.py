@@ -31,6 +31,7 @@ class TaskService(Resource):
             case_data = task.query.all()
             app.logger.info(case_data)
             data = [i.as_dict() for i in case_data]
+            app.logger.info(data)
             return {"error": 0, "msg": {"data": data}}
 
     def post(self):

@@ -21,7 +21,7 @@ class task(db.Model):
         return {
             "id": self.id,
             "remark": self.remark,
-            "create_at": self.create_at,
+            "create_at": str(self.create_at),
             "report": self.report
         }
 
