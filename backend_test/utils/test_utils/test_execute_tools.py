@@ -11,4 +11,4 @@ class Test_execute:
         print(ExecuteTools.get_jobs())
 
     def test_invoke(self):
-        print ExecuteTools.invoke()
+        print(ExecuteTools.invoke())
