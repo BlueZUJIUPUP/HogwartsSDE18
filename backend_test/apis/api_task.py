@@ -40,20 +40,12 @@ class TaskService(Resource):
         """
         data = request.json
         app.logger.info(data)
-
-
-        # Task = task(**data)
-        # data_ID = data['id']
-        # r = task.query.filter_by(id=data_ID).all()
-        # id重复判断
-        # if r == []:
-
-            # Task.id = json.dumps(request.json.get("id"))
-        nodeid = data.get("remark")
-        app.logger.info(f"执行的用例为{nodeid}")
-        report = ExecuteTools.invoke(nodeid)
-        app.logger.info(f"添加一条task，报告为{report}，执行用例为{nodeid}")
-        Task = task(remark=nodeid, report=report)
+        nodeids = [i["nodeID"] for i in data]
+        nodeids = " ".join(nodeids)
+        app.logger.info(f"执行的用例为{nodeids}")
+        report = ExecuteTools.invoke(nodeids)
+        app.logger.info(f"添加一条task，报告为{report}，执行用例为{nodeids}")
+        Task = task(remark=nodeids, report=report)
         db.session.add(Task)
         db.session.commit()
         db.session.close()
@@ -62,3 +54,17 @@ class TaskService(Resource):
         # else:
         #     return {"error": 40005, "msg": 'id except'}
 
+    def delete(self):
+        """
+        删除操作
+        :return:
+        """
+        data_ID = request.args.get("id")
+        if data_ID != None:
+            app.logger.info(data_ID)
+            task.query.filter_by(id=data_ID).delete()
+            db.session.commit()
+            db.session.close()
+            return {"error": 0, "msg": 'delete success'}
+        else:
+            return {"error": 40002, "msg": "ID can't null"}

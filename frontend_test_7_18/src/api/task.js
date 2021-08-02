@@ -4,8 +4,13 @@ const task ={
     getTaskData(){
         return axios.get('/task')
     },
-    createCase(params){
-        return axios.post('/testcase',params)
+    
+    delTaskData(params){
+        return axios.delete('/task',{params})
     },
+    
+    addTask(params){
+        return axios.post('/task',params)
+    }
 }
 export default task
