@@ -8,7 +8,7 @@
             <v-list-item>
               <v-list-item-content>
                 <v-list-item-title class="text-h6">测试平台</v-list-item-title>
-                <v-list-item-subtitle> Zyy </v-list-item-subtitle>
+                <v-list-item-subtitle> BLUE_JUZIUPUP </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
 

@@ -33,8 +33,8 @@ class Events:
             print(flow.response.text)
             print("*" * 30)
             data = json.loads(flow.response.text)
-            data["data"]["items"][0]["quote"]["name"] = "hogwartsssssssssss"
-            data["data"]["items"][1]["quote"]["name"] = "tsssssssssss"
+            data["data"]["items"][0]["quote"]["name"] = "test"
+            data["data"]["items"][1]["quote"]["name"] = "test"
             flow.response.text = json.dumps(data)
 
 

@@ -6,10 +6,10 @@
 
 from jenkinsapi.jenkins import Jenkins
 class ExecuteTools:
-    URL = 'http://172.20.10.10:8080/'
-    USERNAME = 'zio_zhou'
-    PASSWORD = '117e96d128733408318471d73adb477c58'
-    JOB_NAME = "test_ck18"
+    URL = 'http://XXX.XXX.XXX.XXX:8080/'
+    USERNAME = 'BLUE_JUZIUPUP'
+    PASSWORD = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    JOB_NAME = "test"
 
 
     @classmethod
@@ -20,12 +20,12 @@ class ExecuteTools:
     @classmethod
     def invoke(cls,testcase_name):
         jenkins = Jenkins(cls.URL,cls.USERNAME,cls.PASSWORD)
-        # print(jenkins.keys())
+
         test_ck18 = jenkins.get_job(cls.JOB_NAME)
-        # print test_ck18
+
         test_ck18.invoke(build_params={"testcase_name":testcase_name})
         last_build_number = test_ck18.get_last_buildnumber()
-        # print(last_build_number)
+
         while True:
             build_number = test_ck18.get_last_buildnumber()
             if last_build_number != build_number:
