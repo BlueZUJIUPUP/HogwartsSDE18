@@ -14,8 +14,8 @@ from Work_Wechat_Api.WeWorkApi.externalcontact.tag_API import Tag_Api
 class TestWework():
     @allure.story("模块初始化")
     def setup_class(self):
-        corpid = "wwf443a769ec9a969f"
-        extrnalcontac_corpsecret = "vMWlkH8N-37OO4rm8qMk-279RjECOsogSin_I9kE-AA"
+        corpid = "XXXXXXXXXXXXXXXXXXXXXXXXX"
+        contact_corpsecret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 
         self.fake = Faker()
         self.wework = Tag_Api()

@@ -14,8 +14,8 @@ from Work_Wechat_Api.WeWorkApi.contact.department_API import department_API
 
 class Testdepartment():
     def setup_class(self):
-        corpid = "wwf443a769ec9a969f"
-        contact_corpsecret = 'qmxhWtaN4Afxz-72cJbutxQ-0EY93yJdOciqVhKSsb4'
+        corpid = "XXXXXXXXXXXXXXXXXXXXXXXXX"
+        contact_corpsecret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
         self.fake = Faker(locale='zh_CN')
         self.department = department_API()
         self.access_token = self.department.get_access_token(corpid,contact_corpsecret)

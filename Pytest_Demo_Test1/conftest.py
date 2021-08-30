@@ -6,9 +6,6 @@ import logging
 
 import pytest
 import requests
-
-from Work_Wechat_GUI_App.page.App import App
-from Work_Wechat_GUI_App.page.BasePage import BasePage
 logging.basicConfig(level=logging.INFO)
 
 
