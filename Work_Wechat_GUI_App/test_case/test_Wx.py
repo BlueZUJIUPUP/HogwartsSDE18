@@ -2,15 +2,13 @@
 # @File   : test_Wx
 # @Time   : 2021/4/22 21:55 
 # @Author : BLUE_JUZIUPUP
+
 import logging
 import sys
-import time
 import allure
 import pytest
 
 from Work_Wechat_GUI_App.page.App import App
-from Work_Wechat_GUI_App.page.main_page import main_page
-from Work_Wechat_GUI_App.utils.get_func_name import get_fanc_name
 from Work_Wechat_GUI_App.utils.get_random_info import get_random_info
 logging.basicConfig(level=logging.INFO)
 

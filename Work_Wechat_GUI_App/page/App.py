@@ -4,7 +4,7 @@
 # @Author : BLUE_JUZIUPUP
 import logging
 
-#from appium import webdriver
+from appium import webdriver
 
 from Work_Wechat_GUI_App.page.BasePage import BasePage
 from Work_Wechat_GUI_App.page.main_page import main_page

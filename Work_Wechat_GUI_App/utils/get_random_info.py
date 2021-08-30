@@ -32,8 +32,7 @@ class get_random_info():
         name="da"
         phone ='13'
         return name,phone
+
+
 if __name__ == '__main__':
     a = get_random_info()
-    print(a.nmsl())
-    print(a.nmsl()[1])
-    print(a.nmsl()[0])
