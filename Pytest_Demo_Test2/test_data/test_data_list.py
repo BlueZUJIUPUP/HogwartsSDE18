@@ -2,13 +2,14 @@
 # @File   : Open_Test
 # @Time   : 2021/4/8 22:08 
 # @Author : BLUE_JUZIUPUP
+import os
 import pytest
 import yaml
 
-
+path = os.path.dirname(os.path.realpath(__file__))
 #读取yaml文件的用例集
 def open_test():
-    with open(r'C:\Users\BLUE_JUZIUPUP\Desktop\hgwc\HogwartsSDE18\Hogwarts_work_2021_4_11\test_data\test_case.yaml',encoding="utf-8") as f:
+    with open(f'{path}\/test_case.yaml',encoding="utf-8") as f:
         a = yaml.load(f,Loader=yaml.FullLoader)
         add = a['add_test']
         sub = a['sub_test']

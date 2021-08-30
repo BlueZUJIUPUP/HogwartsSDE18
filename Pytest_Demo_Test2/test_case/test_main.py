@@ -6,8 +6,6 @@
 import pytest
 import allure
 
-#from Pytest_Demo_Test2.test_data.test_data_list import add_list,sub_list,add_value,sub_value
-
 @pytest.fixture(scope="module")
 def module_setup():
     print("开始运行")
